@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnimGraph 2 Editor</title>
+<link rel="icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Crect width="16" height="16" rx="3" fill="%231d2021"/%3E%3Ccircle cx="4" cy="8" r="2" fill="%23fabd2f"/%3E%3Ccircle cx="12" cy="4" r="2" fill="%237daea3"/%3E%3Ccircle cx="12" cy="12" r="2" fill="%23d8a657"/%3E%3Cpath d="M5.7 7.2 10.3 4.8M5.7 8.8l4.6 2.4" stroke="%23a89984" stroke-width="1.2" fill="none"/%3E%3C/svg%3E'>
+<link rel="stylesheet" href="src/editor/style.css">
+</head>
+<body>
+<header class="toolbar">
+    <strong class="brand">AnimGraph&nbsp;2</strong>
+
+    <button type="button" id="new">New</button>
+    <button type="button" id="open">Open…</button>
+    <button type="button" id="save">Save</button>
+    <button type="button" id="sample" title="Load a small example graph">Sample</button>
+    <input type="file" id="file-input" accept=".vnmgraph,.vnmvar,.txt" hidden>
+
+    <span class="divider"></span>
+
+    <button type="button" id="undo" disabled>Undo</button>
+    <button type="button" id="redo" disabled>Redo</button>
+
+    <span class="divider"></span>
+
+    <button type="button" id="layout" title="Lay the current canvas out (L)">Layout</button>
+    <button type="button" id="fit" title="Fit the view to the graph (F)">Fit</button>
+    <button type="button" id="add-pin" title="Add an input pin to a node that takes a variable number">+ Pin</button>
+
+    <input type="search" id="search" placeholder="Highlight nodes…">
+
+    <span class="spacer"></span>
+    <span id="counts" class="counts"></span>
+</header>
+
+<nav class="breadcrumb" id="breadcrumb"></nav>
+
+<main>
+    <aside class="panel left">
+        <input type="search" id="palette-search" placeholder="Search nodes…">
+        <div id="palette" class="palette"></div>
+    </aside>
+
+    <div class="canvas-host">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <aside class="panel right">
+        <div id="inspector" class="inspector"></div>
+        <section class="problems-section">
+            <h3>Problems <span id="problem-count" class="badge"></span></h3>
+            <div id="problems" class="problems"></div>
+        </section>
+    </aside>
+</main>
+
+<footer>
+    <span id="status" class="status"></span>
+    <span class="hint">
+        drag a pin to wire · double-click a node to open its sub-graph · Del removes · Ctrl+Z undoes
+    </span>
+</footer>
+
+<script type="module">
+import { EditorApp } from './src/editor/app.js';
+
+const app = new EditorApp({
+    canvas: document.getElementById('canvas'),
+    palette: document.getElementById('palette'),
+    paletteSearch: document.getElementById('palette-search'),
+    inspector: document.getElementById('inspector'),
+    problems: document.getElementById('problems'),
+    problemCount: document.getElementById('problem-count'),
+    breadcrumb: document.getElementById('breadcrumb'),
+    status: document.getElementById('status'),
+    counts: document.getElementById('counts'),
+    search: document.getElementById('search'),
+    fileInput: document.getElementById('file-input'),
+    new: document.getElementById('new'),
+    open: document.getElementById('open'),
+    save: document.getElementById('save'),
+    undo: document.getElementById('undo'),
+    redo: document.getElementById('redo'),
+    layout: document.getElementById('layout'),
+    fit: document.getElementById('fit'),
+    addPin: document.getElementById('add-pin'),
+    sample: document.getElementById('sample'),
+});
+
+// Handy when poking at a document from the browser console.
+globalThis.editor = app;
+</script>
+</body>
+</html>

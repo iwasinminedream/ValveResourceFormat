@@ -7,6 +7,8 @@
   "scripts": {
     "test": "node --test \"tests/*.test.mjs\"",
     "schema": "python3 tools/generate-schema.py",
-    "serve": "node tools/serve.mjs"
+    "serve": "node tools/serve.mjs",
+    "test:browser": "node tests/browser.smoke.mjs",
+    "sample": "node tests/fixtures/make-sample.mjs"
   }
 }

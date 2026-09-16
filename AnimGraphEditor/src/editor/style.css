@@ -1,0 +1,306 @@
+:root {
+    --bg: #1d2021;
+    --panel: #282c2f;
+    --panel-alt: #32373a;
+    --line: #15181a;
+    --text: #ebdbb2;
+    --muted: #a89984;
+    --accent: #fabd2f;
+    --error: #fb4934;
+    --warning: #d79921;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+    font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+    overflow: hidden;
+}
+
+/* ------------------------------------------------------------------ chrome */
+
+.toolbar,
+.breadcrumb,
+footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    flex: none;
+}
+
+.brand {
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-right: 6px;
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: var(--line);
+    margin: 0 4px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.counts {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+button {
+    background: var(--panel-alt);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: #3d4448;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font: inherit;
+    width: 100%;
+    min-width: 0;
+}
+
+.toolbar input[type="search"] {
+    width: 180px;
+}
+
+textarea.invalid {
+    border-color: var(--error);
+}
+
+.breadcrumb {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.breadcrumb button {
+    background: none;
+    border: none;
+    color: var(--accent);
+    padding: 2px 4px;
+}
+
+.breadcrumb button:disabled {
+    color: var(--muted);
+    opacity: 1;
+}
+
+.breadcrumb .separator {
+    color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ layout */
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 240px 1fr 320px;
+    min-height: 0;
+}
+
+.panel {
+    background: var(--panel);
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.panel.left {
+    border-right: 1px solid var(--line);
+}
+
+.panel.right {
+    border-left: 1px solid var(--line);
+}
+
+.canvas-host {
+    position: relative;
+    min-width: 0;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+}
+
+/* ----------------------------------------------------------------- palette */
+
+.palette details {
+    border-bottom: 1px solid var(--line);
+}
+
+.palette summary {
+    cursor: pointer;
+    padding: 4px 2px;
+    color: var(--muted);
+    user-select: none;
+}
+
+.palette-entry {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.palette-entry:hover {
+    background: var(--panel-alt);
+}
+
+/* --------------------------------------------------------------- inspector */
+
+.inspector h2 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--accent);
+}
+
+.inspector h3,
+.problems-section h3 {
+    margin: 10px 0 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+}
+
+.class-name {
+    margin: 2px 0 8px;
+    color: var(--muted);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.field {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.field > span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 2px;
+    overflow-wrap: anywhere;
+}
+
+.field input[type="checkbox"] {
+    width: auto;
+}
+
+.empty {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.warning {
+    color: var(--warning);
+}
+
+/* ---------------------------------------------------------------- problems */
+
+.problems-section {
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    margin-top: auto;
+}
+
+.problems {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.problem {
+    margin: 2px 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.problem.error {
+    color: var(--error);
+}
+
+.problem.warning {
+    color: var(--warning);
+}
+
+.badge {
+    color: var(--muted);
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.badge.has-errors {
+    color: var(--error);
+}
+
+/* ------------------------------------------------------------------ footer */
+
+footer {
+    border-bottom: none;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+}
+
+.status.error {
+    color: var(--error);
+}
+
+.hint {
+    margin-left: auto;
+    color: var(--muted);
+}
+
+@media (max-width: 1100px) {
+    main {
+        grid-template-columns: 180px 1fr 260px;
+    }
+}
