@@ -1,0 +1,14 @@
+{
+  "name": "animgraph-editor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone editor for Source 2 AnimGraph 2 (.vnmgraph) authored documents",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "schema": "python3 tools/generate-schema.py",
+    "serve": "node tools/serve.mjs",
+    "test:browser": "node tests/browser.smoke.mjs",
+    "sample": "node tests/fixtures/make-sample.mjs"
+  }
+}

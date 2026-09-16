@@ -1,0 +1,636 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CNmGraphDocument"
+	m_nVersion = 0
+	m_pRootGraph = 
+	{
+		_class = "CNmGraphDocFlowGraph"
+		m_ID = "aa7c0739-07d7-46ac-a68a-9758e37e43b4"
+		m_nodes = 
+		[
+			{
+				_class = "CNmGraphDocBoolControlParameterNode"
+				m_ID = "ea02d43f-c012-4cec-973c-30b898a79d72"
+				m_name = "is_moving"
+				m_floatingComment = ""
+				m_position = [ 0.0, 0.0 ]
+				m_inputPins = [  ]
+				m_outputPins = 
+				[
+					{
+						m_ID = "ad8ac08b-ae95-4dd0-ad18-09005bedf790"
+						m_name = "Value"
+						m_type = "Bool"
+						m_bIsDynamicPin = false
+						m_bAllowMultipleOutConnections = true
+					},
+				]
+				m_groupName = ""
+				m_dictionaryParameterBinding = "00000000-0000-0000-0000-000000000000"
+			},
+			{
+				_class = "CNmGraphDocFloatControlParameterNode"
+				m_ID = "7900794b-edcd-4c2d-85f4-746933a1b723"
+				m_name = "speed"
+				m_floatingComment = ""
+				m_position = [ 0.0, 120.0 ]
+				m_inputPins = [  ]
+				m_outputPins = 
+				[
+					{
+						m_ID = "3e9bfb7a-9187-4edf-b7a2-d684963d3aeb"
+						m_name = "Value"
+						m_type = "Float"
+						m_bIsDynamicPin = false
+						m_bAllowMultipleOutConnections = true
+					},
+				]
+				m_groupName = ""
+				m_dictionaryParameterBinding = "00000000-0000-0000-0000-000000000000"
+			},
+			{
+				_class = "CNmGraphDocFloatVirtualParameterNode"
+				m_ID = "a8068e04-01ce-4c59-822c-d503a8cd13cc"
+				m_name = "normalised_speed"
+				m_floatingComment = ""
+				m_position = [ 0.0, 240.0 ]
+				m_inputPins = [  ]
+				m_outputPins = 
+				[
+					{
+						m_ID = "f66e5445-08a5-43b3-b621-8867252ad59f"
+						m_name = "Value"
+						m_type = "Float"
+						m_bIsDynamicPin = false
+						m_bAllowMultipleOutConnections = true
+					},
+				]
+				m_groupName = ""
+				m_pChildGraph = 
+				{
+					_class = "CNmGraphDocFlowGraph"
+					m_ID = "2713cf7a-2491-4eec-ac50-b86d00d647af"
+					m_nodes = 
+					[
+						{
+							_class = "CNmGraphDocFloatClampNode"
+							m_ID = "ab1607b0-2a08-4352-a316-fc3d2247b071"
+							m_name = "clamp"
+							m_floatingComment = ""
+							m_position = [ 0.0, 0.0 ]
+							m_inputPins = 
+							[
+								{
+									m_ID = "a5f0e0d1-5f0b-4121-852c-d0dc2591869c"
+									m_name = "Value"
+									m_type = "Float"
+									m_bIsDynamicPin = false
+									m_bAllowMultipleOutConnections = false
+								},
+							]
+							m_outputPins = 
+							[
+								{
+									m_ID = "e9579a2f-cedb-44f2-8b8c-58ebc086b743"
+									m_name = "Result"
+									m_type = "Float"
+									m_bIsDynamicPin = false
+									m_bAllowMultipleOutConnections = true
+								},
+							]
+							m_clampRange = 
+							{
+								m_flBegin = 0.0
+								m_flEnd = 1.0
+							}
+						},
+						{
+							_class = "CNmGraphDocFloatResultNode"
+							m_ID = "4f1c4c85-0157-4482-ad35-338349baf507"
+							m_name = "result"
+							m_floatingComment = ""
+							m_position = [ 320.0, 0.0 ]
+							m_inputPins = 
+							[
+								{
+									m_ID = "ecb8c72d-1203-4078-97cb-719585d5e653"
+									m_name = "Out"
+									m_type = "Float"
+									m_bIsDynamicPin = false
+									m_bAllowMultipleOutConnections = false
+								},
+							]
+							m_outputPins = [  ]
+						},
+					]
+					m_graphType = "VirtualParameterValueTree"
+					m_viewOffset = [ 0.0, 0.0 ]
+					m_flViewZoom = 1.0
+					m_connections = 
+					[
+						{
+							m_ID = "fbf39700-1046-40c9-9044-56994595762e"
+							m_fromNodeID = "ab1607b0-2a08-4352-a316-fc3d2247b071"
+							m_outputPinID = "e9579a2f-cedb-44f2-8b8c-58ebc086b743"
+							m_toNodeID = "4f1c4c85-0157-4482-ad35-338349baf507"
+							m_inputPinID = "ecb8c72d-1203-4078-97cb-719585d5e653"
+						},
+					]
+				}
+			},
+			{
+				_class = "CNmGraphDocStateMachineNode"
+				m_ID = "742c8ff3-dd2d-4229-a07c-af21d0dd131d"
+				m_name = "locomotion"
+				m_floatingComment = ""
+				m_position = [ 420.0, 120.0 ]
+				m_inputPins = [  ]
+				m_outputPins = 
+				[
+					{
+						m_ID = "fccba21f-43cd-4f6b-9881-3981721f0fb5"
+						m_name = "Pose"
+						m_type = "Pose"
+						m_bIsDynamicPin = false
+						m_bAllowMultipleOutConnections = false
+					},
+				]
+				m_pChildGraph = 
+				{
+					_class = "CNmGraphDocStateMachineGraph"
+					m_ID = "7d884784-ee44-45ff-a21d-3b6ae91c04c2"
+					m_nodes = 
+					[
+						{
+							_class = "CNmGraphDocStateNode"
+							m_ID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
+							m_name = "idle"
+							m_floatingComment = ""
+							m_position = [ 0.0, 0.0 ]
+							m_inputPins = [  ]
+							m_outputPins = [  ]
+							m_pChildGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "def75ee4-da85-42a4-8c2f-71a1a67aa898"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocClipNode"
+										m_ID = "37ad729f-e1ba-439e-93cb-2ab9d44e7b29"
+										m_name = "idle_clip"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "f9cf6392-e90a-4403-ad52-b50630db779c"
+												m_name = "Play In Reverse"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "854588af-cb31-4543-93cb-e347d2596984"
+												m_name = "Reset Time"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = 
+										[
+											{
+												m_ID = "f4628067-a897-4776-8078-3728cfacb6d8"
+												m_name = "Pose"
+												m_type = "Pose"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_pDefaultVariationData = 
+										{
+											_class = "CNmGraphDocClipNode::CData"
+											m_resourceName = "animations/idle.vnmclip"
+										}
+										m_overrides = [  ]
+										m_defaultResourceName = ""
+										m_bSampleRootMotion = true
+										m_bAllowLooping = true
+										m_graphEvents = [  ]
+									},
+									{
+										_class = "CNmGraphDocPoseResultNode"
+										m_ID = "e4b509cb-5df2-4a55-bf9c-0ab36810b3ce"
+										m_name = "result"
+										m_floatingComment = ""
+										m_position = [ 320.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "e255acbb-5275-484b-b273-309d10d592a8"
+												m_name = "Out"
+												m_type = "Pose"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+									},
+								]
+								m_graphType = "BlendTree"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = 
+								[
+									{
+										m_ID = "60a825f4-778a-4c79-a523-85affdd3ba7f"
+										m_fromNodeID = "37ad729f-e1ba-439e-93cb-2ab9d44e7b29"
+										m_outputPinID = "f4628067-a897-4776-8078-3728cfacb6d8"
+										m_toNodeID = "e4b509cb-5df2-4a55-bf9c-0ab36810b3ce"
+										m_inputPinID = "e255acbb-5275-484b-b273-309d10d592a8"
+									},
+								]
+							}
+							m_pSecondaryGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "48f8ae8b-6a21-47dc-9a2d-ee775f41888b"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocStateLayerResultNode"
+										m_ID = "9ca9efdb-ab1f-4376-ae18-38ff95e7b6a1"
+										m_name = "result"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "9ed2e289-dd4c-450a-a913-007ae31d7bfe"
+												m_name = "Layer Weight"
+												m_type = "Float"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "a7727dc7-1540-48f9-b663-22d632f9d502"
+												m_name = "Root Motion Weight"
+												m_type = "Float"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "4b43721c-c915-4bf2-a156-d9f3637aeaac"
+												m_name = "Bone Mask"
+												m_type = "BoneMask"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+									},
+								]
+								m_graphType = "ValueTree"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = [  ]
+							}
+							m_type = "BlendTreeState"
+							m_cloneSourceStateID = "00000000-0000-0000-0000-000000000000"
+							m_stateEvents = [  ]
+							m_timedStateEvents = [  ]
+							m_events = [  ]
+							m_entryEvents = [  ]
+							m_executeEvents = [  ]
+							m_exitEvents = [  ]
+							m_timeRemainingEvents = [  ]
+							m_timeElapsedEvents = [  ]
+							m_bUseActualElapsedTimeInStateForTimedEvents = false
+						},
+						{
+							_class = "CNmGraphDocStateNode"
+							m_ID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
+							m_name = "run"
+							m_floatingComment = ""
+							m_position = [ 640.0, 0.0 ]
+							m_inputPins = [  ]
+							m_outputPins = [  ]
+							m_pChildGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "ed786231-dc1f-49d9-a90d-7582012b011d"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocClipNode"
+										m_ID = "e0e4b793-5ea9-42d1-ada8-0e78a595c884"
+										m_name = "run_clip"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "f8282b22-02f0-4ecf-bd93-415fdbe16d6d"
+												m_name = "Play In Reverse"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "e21cf5e2-0477-43a8-840d-c72c4f246da5"
+												m_name = "Reset Time"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = 
+										[
+											{
+												m_ID = "42c85cd1-0243-4ea8-b5ad-a415cc98e39a"
+												m_name = "Pose"
+												m_type = "Pose"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_pDefaultVariationData = 
+										{
+											_class = "CNmGraphDocClipNode::CData"
+											m_resourceName = "animations/run.vnmclip"
+										}
+										m_overrides = [  ]
+										m_defaultResourceName = ""
+										m_bSampleRootMotion = true
+										m_bAllowLooping = true
+										m_graphEvents = [  ]
+									},
+									{
+										_class = "CNmGraphDocPoseResultNode"
+										m_ID = "f9f98930-4ea2-4d8c-89dc-b1c8d39b72ef"
+										m_name = "result"
+										m_floatingComment = ""
+										m_position = [ 320.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "d0f40ea4-50af-4fd1-8c4f-25ec1238723a"
+												m_name = "Out"
+												m_type = "Pose"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+									},
+								]
+								m_graphType = "BlendTree"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = 
+								[
+									{
+										m_ID = "d81ffeea-c167-4057-b411-1145c74b4a5c"
+										m_fromNodeID = "e0e4b793-5ea9-42d1-ada8-0e78a595c884"
+										m_outputPinID = "42c85cd1-0243-4ea8-b5ad-a415cc98e39a"
+										m_toNodeID = "f9f98930-4ea2-4d8c-89dc-b1c8d39b72ef"
+										m_inputPinID = "d0f40ea4-50af-4fd1-8c4f-25ec1238723a"
+									},
+								]
+							}
+							m_pSecondaryGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "28e17577-a99f-472f-8e3c-83470f1b4f5c"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocStateLayerResultNode"
+										m_ID = "c63377b9-c3de-4d5a-b23f-b835888628d0"
+										m_name = "result"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "d6c69abe-7cdd-448d-8b7b-3958ea1f2ae7"
+												m_name = "Layer Weight"
+												m_type = "Float"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "482b6da0-b689-4b09-a739-53cf181c4925"
+												m_name = "Root Motion Weight"
+												m_type = "Float"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "067c20ba-4fca-4e04-bb83-659cfef96fe9"
+												m_name = "Bone Mask"
+												m_type = "BoneMask"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+									},
+								]
+								m_graphType = "ValueTree"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = [  ]
+							}
+							m_type = "BlendTreeState"
+							m_cloneSourceStateID = "00000000-0000-0000-0000-000000000000"
+							m_stateEvents = [  ]
+							m_timedStateEvents = [  ]
+							m_events = [  ]
+							m_entryEvents = [  ]
+							m_executeEvents = [  ]
+							m_exitEvents = [  ]
+							m_timeRemainingEvents = [  ]
+							m_timeElapsedEvents = [  ]
+							m_bUseActualElapsedTimeInStateForTimedEvents = false
+						},
+						{
+							_class = "CNmGraphDocEntryStateOverrideConduitNode"
+							m_ID = "89c33012-5b39-4557-988f-1898245bdbea"
+							m_name = ""
+							m_floatingComment = ""
+							m_position = [ 300.0, 320.0 ]
+							m_inputPins = [  ]
+							m_outputPins = [  ]
+							m_pSecondaryGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "b10d11c2-8b5f-40e8-b8c5-7afdb1ddea84"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocEntryStateOverrideConditionsNode"
+										m_ID = "4961d7b0-a624-4bf0-aba0-697151395ced"
+										m_name = "entry overrides"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "c360c30b-ea84-4ded-9bcb-b05cb67f1940"
+												m_name = "idle"
+												m_type = "Bool"
+												m_bIsDynamicPin = true
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "f130dbdf-2fd7-467b-8bef-7f7d8f162ca9"
+												m_name = "run"
+												m_type = "Bool"
+												m_bIsDynamicPin = true
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+										m_pinToStateMapping = [ "7f4e0e32-bde6-4017-b1a4-62c44572811b", "13fb52ae-9e39-457f-a673-b3a2c4027637" ]
+									},
+								]
+								m_graphType = "EntryOverrideTree"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = [  ]
+							}
+						},
+						{
+							_class = "CNmGraphDocTransitionConduitNode"
+							m_ID = "0d9875a6-a083-4e7d-bf22-1cddeb8f0ba4"
+							m_name = ""
+							m_floatingComment = ""
+							m_position = [ 300.0, 160.0 ]
+							m_inputPins = [  ]
+							m_outputPins = [  ]
+							m_startStateID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
+							m_endStateID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
+							m_pSecondaryGraph = 
+							{
+								_class = "CNmGraphDocFlowGraph"
+								m_ID = "ebb28672-59b3-48d7-8c55-d65ede1d151e"
+								m_nodes = 
+								[
+									{
+										_class = "CNmGraphDocBoolParameterReferenceNode"
+										m_ID = "69c2c4d8-7f2b-4839-831a-25a4ec8e9c3d"
+										m_name = "is_moving"
+										m_floatingComment = ""
+										m_position = [ 0.0, 0.0 ]
+										m_inputPins = [  ]
+										m_outputPins = 
+										[
+											{
+												m_ID = "bff89fa1-bc4d-4624-be65-d21ff4d83ade"
+												m_name = "Value"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = true
+											},
+										]
+										m_parameterID = "is_moving"
+									},
+									{
+										_class = "CNmGraphDocTransitionNode"
+										m_ID = "ee8953e4-41b8-4ec4-8af2-57d25ef1d479"
+										m_name = ""
+										m_floatingComment = ""
+										m_position = [ 320.0, 0.0 ]
+										m_inputPins = 
+										[
+											{
+												m_ID = "9b5aac9b-45de-4e95-8f1a-11719930ca47"
+												m_name = "Condition"
+												m_type = "Bool"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+											{
+												m_ID = "52bd90fe-5c0f-4b64-bf4f-79820804f003"
+												m_name = "Duration Override"
+												m_type = "Float"
+												m_bIsDynamicPin = false
+												m_bAllowMultipleOutConnections = false
+											},
+										]
+										m_outputPins = [  ]
+										m_endStateID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
+										m_bCanBeForced = false
+									},
+								]
+								m_graphType = "TransitionConduit"
+								m_viewOffset = [ 0.0, 0.0 ]
+								m_flViewZoom = 1.0
+								m_connections = 
+								[
+									{
+										m_ID = "12e247c4-d070-4fcd-a71f-1139d76385a5"
+										m_fromNodeID = "69c2c4d8-7f2b-4839-831a-25a4ec8e9c3d"
+										m_outputPinID = "bff89fa1-bc4d-4624-be65-d21ff4d83ade"
+										m_toNodeID = "ee8953e4-41b8-4ec4-8af2-57d25ef1d479"
+										m_inputPinID = "9b5aac9b-45de-4e95-8f1a-11719930ca47"
+									},
+								]
+							}
+						},
+					]
+					m_graphType = "StateMachine"
+					m_viewOffset = [ 0.0, 0.0 ]
+					m_flViewZoom = 1.0
+					m_entryStateID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
+				}
+			},
+			{
+				_class = "CNmGraphDocPoseResultNode"
+				m_ID = "c2a3b684-62b5-4a55-bad8-567c428ec3ca"
+				m_name = "result"
+				m_floatingComment = ""
+				m_position = [ 760.0, 120.0 ]
+				m_inputPins = 
+				[
+					{
+						m_ID = "ba2520b0-09e1-46bb-b920-7f3f4f50c27c"
+						m_name = "Out"
+						m_type = "Pose"
+						m_bIsDynamicPin = false
+						m_bAllowMultipleOutConnections = false
+					},
+				]
+				m_outputPins = [  ]
+			},
+		]
+		m_graphType = "BlendTree"
+		m_viewOffset = [ 0.0, 0.0 ]
+		m_flViewZoom = 1.0
+		m_connections = 
+		[
+			{
+				m_ID = "88e53b47-4b1e-44a1-b376-45f676def204"
+				m_fromNodeID = "742c8ff3-dd2d-4229-a07c-af21d0dd131d"
+				m_outputPinID = "fccba21f-43cd-4f6b-9881-3981721f0fb5"
+				m_toNodeID = "c2a3b684-62b5-4a55-bad8-567c428ec3ca"
+				m_inputPinID = "ba2520b0-09e1-46bb-b920-7f3f4f50c27c"
+			},
+		]
+	}
+	m_variationHierarchy = 
+	{
+		m_variations = 
+		[
+			{
+				m_ID = "Default"
+				m_parentID = ""
+				m_skeleton = "models/example.vnmskel"
+			},
+		]
+	}
+	m_debugParameterSets = [  ]
+	m_dictionaryIDSetIDs = [  ]
+}
