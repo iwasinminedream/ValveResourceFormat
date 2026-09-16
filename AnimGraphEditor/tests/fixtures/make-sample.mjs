@@ -96,9 +96,9 @@ function stateLayerGraph() {
     return flowGraph([result], [], 'ValueTree');
 }
 
-function stateNode(name, clipName, resourcePath) {
+function stateNode(name, clipName, resourcePath, position) {
     return node('CNmGraphDocStateNode', name, {
-        position: [0, 0],
+        position,
         m_pChildGraph: stateBlendTree(clipName, resourcePath),
         m_pSecondaryGraph: stateLayerGraph(),
         m_type: 'BlendTreeState',
@@ -116,8 +116,8 @@ function stateNode(name, clipName, resourcePath) {
 }
 
 export function buildSampleDocument() {
-    const idle = stateNode('idle', 'idle_clip', 'animations/idle.vnmclip');
-    const run = stateNode('run', 'run_clip', 'animations/run.vnmclip');
+    const idle = stateNode('idle', 'idle_clip', 'animations/idle.vnmclip', [0, 0]);
+    const run = stateNode('run', 'run_clip', 'animations/run.vnmclip', [640, 0]);
 
     // Transition conduit: idle -> run, gated on a bool control parameter.
     const transitionResult = node('CNmGraphDocTransitionNode', '', {
@@ -134,7 +134,7 @@ export function buildSampleDocument() {
     });
 
     const conduit = node('CNmGraphDocTransitionConduitNode', '', {
-        position: [280, 140],
+        position: [300, 160],
         m_startStateID: idle.m_ID,
         m_endStateID: run.m_ID,
         m_pSecondaryGraph: flowGraph(
@@ -145,7 +145,7 @@ export function buildSampleDocument() {
     });
 
     const entryOverride = node('CNmGraphDocEntryStateOverrideConduitNode', '', {
-        position: [280, 260],
+        position: [300, 320],
         m_pSecondaryGraph: flowGraph(
             [
                 node('CNmGraphDocEntryStateOverrideConditionsNode', 'entry overrides', {

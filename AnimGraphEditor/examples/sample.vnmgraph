@@ -5,12 +5,12 @@
 	m_pRootGraph = 
 	{
 		_class = "CNmGraphDocFlowGraph"
-		m_ID = "da5ce509-a9f1-421b-a9b5-5b75d68e7a2a"
+		m_ID = "aa7c0739-07d7-46ac-a68a-9758e37e43b4"
 		m_nodes = 
 		[
 			{
 				_class = "CNmGraphDocBoolControlParameterNode"
-				m_ID = "09ef84fb-5d37-4f73-9d17-bd4350f31f23"
+				m_ID = "ea02d43f-c012-4cec-973c-30b898a79d72"
 				m_name = "is_moving"
 				m_floatingComment = ""
 				m_position = [ 0.0, 0.0 ]
@@ -18,7 +18,7 @@
 				m_outputPins = 
 				[
 					{
-						m_ID = "3a1b9a1e-2ba8-4405-bf7b-2a791a9fac1c"
+						m_ID = "ad8ac08b-ae95-4dd0-ad18-09005bedf790"
 						m_name = "Value"
 						m_type = "Bool"
 						m_bIsDynamicPin = false
@@ -30,7 +30,7 @@
 			},
 			{
 				_class = "CNmGraphDocFloatControlParameterNode"
-				m_ID = "89124dcb-114c-4c03-b256-4f38800b9d98"
+				m_ID = "7900794b-edcd-4c2d-85f4-746933a1b723"
 				m_name = "speed"
 				m_floatingComment = ""
 				m_position = [ 0.0, 120.0 ]
@@ -38,7 +38,7 @@
 				m_outputPins = 
 				[
 					{
-						m_ID = "96dcc490-2135-4953-b591-4fc641667c56"
+						m_ID = "3e9bfb7a-9187-4edf-b7a2-d684963d3aeb"
 						m_name = "Value"
 						m_type = "Float"
 						m_bIsDynamicPin = false
@@ -50,7 +50,7 @@
 			},
 			{
 				_class = "CNmGraphDocFloatVirtualParameterNode"
-				m_ID = "ea287da1-fccc-4d30-83b6-c4f94279b6ae"
+				m_ID = "a8068e04-01ce-4c59-822c-d503a8cd13cc"
 				m_name = "normalised_speed"
 				m_floatingComment = ""
 				m_position = [ 0.0, 240.0 ]
@@ -58,7 +58,7 @@
 				m_outputPins = 
 				[
 					{
-						m_ID = "d6e56a4a-c4d6-41ba-9003-28b8f8237ca8"
+						m_ID = "f66e5445-08a5-43b3-b621-8867252ad59f"
 						m_name = "Value"
 						m_type = "Float"
 						m_bIsDynamicPin = false
@@ -69,19 +69,19 @@
 				m_pChildGraph = 
 				{
 					_class = "CNmGraphDocFlowGraph"
-					m_ID = "4fc360ca-0a82-4318-b440-7c92c6ec1e0a"
+					m_ID = "2713cf7a-2491-4eec-ac50-b86d00d647af"
 					m_nodes = 
 					[
 						{
 							_class = "CNmGraphDocFloatClampNode"
-							m_ID = "ea4002fb-e089-4091-b453-39a199fc4f20"
+							m_ID = "ab1607b0-2a08-4352-a316-fc3d2247b071"
 							m_name = "clamp"
 							m_floatingComment = ""
 							m_position = [ 0.0, 0.0 ]
 							m_inputPins = 
 							[
 								{
-									m_ID = "5c787c7b-e0a0-4d77-9a37-76eea2f84950"
+									m_ID = "a5f0e0d1-5f0b-4121-852c-d0dc2591869c"
 									m_name = "Value"
 									m_type = "Float"
 									m_bIsDynamicPin = false
@@ -91,7 +91,7 @@
 							m_outputPins = 
 							[
 								{
-									m_ID = "4dcbb87e-3d87-47f7-bf4a-32f3d9adf069"
+									m_ID = "e9579a2f-cedb-44f2-8b8c-58ebc086b743"
 									m_name = "Result"
 									m_type = "Float"
 									m_bIsDynamicPin = false
@@ -106,14 +106,14 @@
 						},
 						{
 							_class = "CNmGraphDocFloatResultNode"
-							m_ID = "1e8ca912-fb61-4d0f-8124-6c2a1fe54fff"
+							m_ID = "4f1c4c85-0157-4482-ad35-338349baf507"
 							m_name = "result"
 							m_floatingComment = ""
 							m_position = [ 320.0, 0.0 ]
 							m_inputPins = 
 							[
 								{
-									m_ID = "42687400-7474-43b0-b3cb-dd6c624f2b2d"
+									m_ID = "ecb8c72d-1203-4078-97cb-719585d5e653"
 									m_name = "Out"
 									m_type = "Float"
 									m_bIsDynamicPin = false
@@ -129,18 +129,18 @@
 					m_connections = 
 					[
 						{
-							m_ID = "a68bfbd0-81e7-4007-834c-e77a0e0f66c5"
-							m_fromNodeID = "ea4002fb-e089-4091-b453-39a199fc4f20"
-							m_outputPinID = "4dcbb87e-3d87-47f7-bf4a-32f3d9adf069"
-							m_toNodeID = "1e8ca912-fb61-4d0f-8124-6c2a1fe54fff"
-							m_inputPinID = "42687400-7474-43b0-b3cb-dd6c624f2b2d"
+							m_ID = "fbf39700-1046-40c9-9044-56994595762e"
+							m_fromNodeID = "ab1607b0-2a08-4352-a316-fc3d2247b071"
+							m_outputPinID = "e9579a2f-cedb-44f2-8b8c-58ebc086b743"
+							m_toNodeID = "4f1c4c85-0157-4482-ad35-338349baf507"
+							m_inputPinID = "ecb8c72d-1203-4078-97cb-719585d5e653"
 						},
 					]
 				}
 			},
 			{
 				_class = "CNmGraphDocStateMachineNode"
-				m_ID = "f6c1975a-0da7-47a7-9f7f-ee4080853b8d"
+				m_ID = "742c8ff3-dd2d-4229-a07c-af21d0dd131d"
 				m_name = "locomotion"
 				m_floatingComment = ""
 				m_position = [ 420.0, 120.0 ]
@@ -148,7 +148,7 @@
 				m_outputPins = 
 				[
 					{
-						m_ID = "18e10fd7-6851-4e41-ab86-879196611b6a"
+						m_ID = "fccba21f-43cd-4f6b-9881-3981721f0fb5"
 						m_name = "Pose"
 						m_type = "Pose"
 						m_bIsDynamicPin = false
@@ -158,12 +158,12 @@
 				m_pChildGraph = 
 				{
 					_class = "CNmGraphDocStateMachineGraph"
-					m_ID = "bdca113a-1832-4c88-b2e0-2b6b7b209eb9"
+					m_ID = "7d884784-ee44-45ff-a21d-3b6ae91c04c2"
 					m_nodes = 
 					[
 						{
 							_class = "CNmGraphDocStateNode"
-							m_ID = "98b9c855-c812-4fd7-a2aa-c7865bcef529"
+							m_ID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
 							m_name = "idle"
 							m_floatingComment = ""
 							m_position = [ 0.0, 0.0 ]
@@ -172,26 +172,26 @@
 							m_pChildGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "edbf3fe5-ee42-4772-9301-530d86322b1e"
+								m_ID = "def75ee4-da85-42a4-8c2f-71a1a67aa898"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocClipNode"
-										m_ID = "64cd685c-64e8-45f8-911f-0df6de8f41fc"
+										m_ID = "37ad729f-e1ba-439e-93cb-2ab9d44e7b29"
 										m_name = "idle_clip"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "9ca3207f-c482-4e14-97aa-f28a72dd61bc"
+												m_ID = "f9cf6392-e90a-4403-ad52-b50630db779c"
 												m_name = "Play In Reverse"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "db00298f-ba56-4f7f-9785-ad7d988ae1ac"
+												m_ID = "854588af-cb31-4543-93cb-e347d2596984"
 												m_name = "Reset Time"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
@@ -201,7 +201,7 @@
 										m_outputPins = 
 										[
 											{
-												m_ID = "639cb466-a70a-44c4-935e-affa6be2d9c5"
+												m_ID = "f4628067-a897-4776-8078-3728cfacb6d8"
 												m_name = "Pose"
 												m_type = "Pose"
 												m_bIsDynamicPin = false
@@ -221,14 +221,14 @@
 									},
 									{
 										_class = "CNmGraphDocPoseResultNode"
-										m_ID = "f02fd875-0bb6-4b18-98e8-ea98982ffcb2"
+										m_ID = "e4b509cb-5df2-4a55-bf9c-0ab36810b3ce"
 										m_name = "result"
 										m_floatingComment = ""
 										m_position = [ 320.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "0ca1caaa-65fc-41b2-a673-0c83bf588042"
+												m_ID = "e255acbb-5275-484b-b273-309d10d592a8"
 												m_name = "Out"
 												m_type = "Pose"
 												m_bIsDynamicPin = false
@@ -244,44 +244,44 @@
 								m_connections = 
 								[
 									{
-										m_ID = "b9469fec-58c6-4153-bee6-44625b2bd423"
-										m_fromNodeID = "64cd685c-64e8-45f8-911f-0df6de8f41fc"
-										m_outputPinID = "639cb466-a70a-44c4-935e-affa6be2d9c5"
-										m_toNodeID = "f02fd875-0bb6-4b18-98e8-ea98982ffcb2"
-										m_inputPinID = "0ca1caaa-65fc-41b2-a673-0c83bf588042"
+										m_ID = "60a825f4-778a-4c79-a523-85affdd3ba7f"
+										m_fromNodeID = "37ad729f-e1ba-439e-93cb-2ab9d44e7b29"
+										m_outputPinID = "f4628067-a897-4776-8078-3728cfacb6d8"
+										m_toNodeID = "e4b509cb-5df2-4a55-bf9c-0ab36810b3ce"
+										m_inputPinID = "e255acbb-5275-484b-b273-309d10d592a8"
 									},
 								]
 							}
 							m_pSecondaryGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "f6f3a8a9-5d58-495a-9c46-a6773ae8448f"
+								m_ID = "48f8ae8b-6a21-47dc-9a2d-ee775f41888b"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocStateLayerResultNode"
-										m_ID = "188ef15e-e34d-48d3-8b01-cbf8b13eb163"
+										m_ID = "9ca9efdb-ab1f-4376-ae18-38ff95e7b6a1"
 										m_name = "result"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "2094ec86-35f2-476c-b516-ba9fcff6af22"
+												m_ID = "9ed2e289-dd4c-450a-a913-007ae31d7bfe"
 												m_name = "Layer Weight"
 												m_type = "Float"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "85866d47-7533-47ef-b819-bd1b6c0e6cf9"
+												m_ID = "a7727dc7-1540-48f9-b663-22d632f9d502"
 												m_name = "Root Motion Weight"
 												m_type = "Float"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "1a24c6bf-cf21-4bbf-8736-a33ca1c22931"
+												m_ID = "4b43721c-c915-4bf2-a156-d9f3637aeaac"
 												m_name = "Bone Mask"
 												m_type = "BoneMask"
 												m_bIsDynamicPin = false
@@ -310,35 +310,35 @@
 						},
 						{
 							_class = "CNmGraphDocStateNode"
-							m_ID = "031b9162-18e4-4627-8f21-c6d984f83906"
+							m_ID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
 							m_name = "run"
 							m_floatingComment = ""
-							m_position = [ 0.0, 0.0 ]
+							m_position = [ 640.0, 0.0 ]
 							m_inputPins = [  ]
 							m_outputPins = [  ]
 							m_pChildGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "d278ca5f-070e-47fa-949c-6db2ab8f40aa"
+								m_ID = "ed786231-dc1f-49d9-a90d-7582012b011d"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocClipNode"
-										m_ID = "1518d672-f14f-484d-914d-c2a91280209f"
+										m_ID = "e0e4b793-5ea9-42d1-ada8-0e78a595c884"
 										m_name = "run_clip"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "e538f66b-17c3-4755-97a5-e6c1355a6886"
+												m_ID = "f8282b22-02f0-4ecf-bd93-415fdbe16d6d"
 												m_name = "Play In Reverse"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "b906f2e0-a5e3-4535-8a19-cd2c08c63ff2"
+												m_ID = "e21cf5e2-0477-43a8-840d-c72c4f246da5"
 												m_name = "Reset Time"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
@@ -348,7 +348,7 @@
 										m_outputPins = 
 										[
 											{
-												m_ID = "9684de18-b6f0-4d89-9e14-a807e558c4b3"
+												m_ID = "42c85cd1-0243-4ea8-b5ad-a415cc98e39a"
 												m_name = "Pose"
 												m_type = "Pose"
 												m_bIsDynamicPin = false
@@ -368,14 +368,14 @@
 									},
 									{
 										_class = "CNmGraphDocPoseResultNode"
-										m_ID = "9a7ad2a0-814a-4401-a54b-c5ae398bb859"
+										m_ID = "f9f98930-4ea2-4d8c-89dc-b1c8d39b72ef"
 										m_name = "result"
 										m_floatingComment = ""
 										m_position = [ 320.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "dc9604b5-10e8-4f7e-ab08-85ab24c9ac49"
+												m_ID = "d0f40ea4-50af-4fd1-8c4f-25ec1238723a"
 												m_name = "Out"
 												m_type = "Pose"
 												m_bIsDynamicPin = false
@@ -391,44 +391,44 @@
 								m_connections = 
 								[
 									{
-										m_ID = "70191de0-bbca-430e-8bbd-0115ab36d01e"
-										m_fromNodeID = "1518d672-f14f-484d-914d-c2a91280209f"
-										m_outputPinID = "9684de18-b6f0-4d89-9e14-a807e558c4b3"
-										m_toNodeID = "9a7ad2a0-814a-4401-a54b-c5ae398bb859"
-										m_inputPinID = "dc9604b5-10e8-4f7e-ab08-85ab24c9ac49"
+										m_ID = "d81ffeea-c167-4057-b411-1145c74b4a5c"
+										m_fromNodeID = "e0e4b793-5ea9-42d1-ada8-0e78a595c884"
+										m_outputPinID = "42c85cd1-0243-4ea8-b5ad-a415cc98e39a"
+										m_toNodeID = "f9f98930-4ea2-4d8c-89dc-b1c8d39b72ef"
+										m_inputPinID = "d0f40ea4-50af-4fd1-8c4f-25ec1238723a"
 									},
 								]
 							}
 							m_pSecondaryGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "6a2d9682-8003-4307-9a4e-ecaedd56e7b2"
+								m_ID = "28e17577-a99f-472f-8e3c-83470f1b4f5c"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocStateLayerResultNode"
-										m_ID = "3bcf1133-7b90-42a6-a771-e3daa18f786d"
+										m_ID = "c63377b9-c3de-4d5a-b23f-b835888628d0"
 										m_name = "result"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "fecf03f3-bc9d-4b18-bca2-83c9ac49f5d7"
+												m_ID = "d6c69abe-7cdd-448d-8b7b-3958ea1f2ae7"
 												m_name = "Layer Weight"
 												m_type = "Float"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "83e0e17e-3f4f-4762-a1cf-0ce57a47b948"
+												m_ID = "482b6da0-b689-4b09-a739-53cf181c4925"
 												m_name = "Root Motion Weight"
 												m_type = "Float"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "2cb033a6-ff41-4b34-9c37-efe06f76033b"
+												m_ID = "067c20ba-4fca-4e04-bb83-659cfef96fe9"
 												m_name = "Bone Mask"
 												m_type = "BoneMask"
 												m_bIsDynamicPin = false
@@ -457,35 +457,35 @@
 						},
 						{
 							_class = "CNmGraphDocEntryStateOverrideConduitNode"
-							m_ID = "af31dd02-d488-42c5-8296-7e06739ceb1c"
+							m_ID = "89c33012-5b39-4557-988f-1898245bdbea"
 							m_name = ""
 							m_floatingComment = ""
-							m_position = [ 280.0, 260.0 ]
+							m_position = [ 300.0, 320.0 ]
 							m_inputPins = [  ]
 							m_outputPins = [  ]
 							m_pSecondaryGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "143fabf7-44da-4460-a28f-f576f4f7c074"
+								m_ID = "b10d11c2-8b5f-40e8-b8c5-7afdb1ddea84"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocEntryStateOverrideConditionsNode"
-										m_ID = "e3f77096-aa90-42a4-bd66-e2e5a88384cc"
+										m_ID = "4961d7b0-a624-4bf0-aba0-697151395ced"
 										m_name = "entry overrides"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "5e66670f-0583-41e7-8e40-684b165895b8"
+												m_ID = "c360c30b-ea84-4ded-9bcb-b05cb67f1940"
 												m_name = "idle"
 												m_type = "Bool"
 												m_bIsDynamicPin = true
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "5645eb90-3e31-4d4e-8199-ec51d5c0dbcd"
+												m_ID = "f130dbdf-2fd7-467b-8bef-7f7d8f162ca9"
 												m_name = "run"
 												m_type = "Bool"
 												m_bIsDynamicPin = true
@@ -493,7 +493,7 @@
 											},
 										]
 										m_outputPins = [  ]
-										m_pinToStateMapping = [ "98b9c855-c812-4fd7-a2aa-c7865bcef529", "031b9162-18e4-4627-8f21-c6d984f83906" ]
+										m_pinToStateMapping = [ "7f4e0e32-bde6-4017-b1a4-62c44572811b", "13fb52ae-9e39-457f-a673-b3a2c4027637" ]
 									},
 								]
 								m_graphType = "EntryOverrideTree"
@@ -504,23 +504,23 @@
 						},
 						{
 							_class = "CNmGraphDocTransitionConduitNode"
-							m_ID = "990ac66a-5edd-4698-8c34-fc7c934abb7c"
+							m_ID = "0d9875a6-a083-4e7d-bf22-1cddeb8f0ba4"
 							m_name = ""
 							m_floatingComment = ""
-							m_position = [ 280.0, 140.0 ]
+							m_position = [ 300.0, 160.0 ]
 							m_inputPins = [  ]
 							m_outputPins = [  ]
-							m_startStateID = "98b9c855-c812-4fd7-a2aa-c7865bcef529"
-							m_endStateID = "031b9162-18e4-4627-8f21-c6d984f83906"
+							m_startStateID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
+							m_endStateID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
 							m_pSecondaryGraph = 
 							{
 								_class = "CNmGraphDocFlowGraph"
-								m_ID = "2c9319e9-f0ef-4743-93b8-23fffa8cb400"
+								m_ID = "ebb28672-59b3-48d7-8c55-d65ede1d151e"
 								m_nodes = 
 								[
 									{
 										_class = "CNmGraphDocBoolParameterReferenceNode"
-										m_ID = "ea82652e-8bfa-4805-a29b-bd19dac58b24"
+										m_ID = "69c2c4d8-7f2b-4839-831a-25a4ec8e9c3d"
 										m_name = "is_moving"
 										m_floatingComment = ""
 										m_position = [ 0.0, 0.0 ]
@@ -528,7 +528,7 @@
 										m_outputPins = 
 										[
 											{
-												m_ID = "d730b0dc-e95c-409e-829d-96cb48ed9670"
+												m_ID = "bff89fa1-bc4d-4624-be65-d21ff4d83ade"
 												m_name = "Value"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
@@ -539,21 +539,21 @@
 									},
 									{
 										_class = "CNmGraphDocTransitionNode"
-										m_ID = "fd88499e-2a3f-484b-91f7-131f6a5c9aa6"
+										m_ID = "ee8953e4-41b8-4ec4-8af2-57d25ef1d479"
 										m_name = ""
 										m_floatingComment = ""
 										m_position = [ 320.0, 0.0 ]
 										m_inputPins = 
 										[
 											{
-												m_ID = "d7de0406-ab82-445d-942c-45adec7d877f"
+												m_ID = "9b5aac9b-45de-4e95-8f1a-11719930ca47"
 												m_name = "Condition"
 												m_type = "Bool"
 												m_bIsDynamicPin = false
 												m_bAllowMultipleOutConnections = false
 											},
 											{
-												m_ID = "7fa1bf53-6c5b-47a2-b333-36557737d3ca"
+												m_ID = "52bd90fe-5c0f-4b64-bf4f-79820804f003"
 												m_name = "Duration Override"
 												m_type = "Float"
 												m_bIsDynamicPin = false
@@ -561,7 +561,7 @@
 											},
 										]
 										m_outputPins = [  ]
-										m_endStateID = "031b9162-18e4-4627-8f21-c6d984f83906"
+										m_endStateID = "13fb52ae-9e39-457f-a673-b3a2c4027637"
 										m_bCanBeForced = false
 									},
 								]
@@ -571,11 +571,11 @@
 								m_connections = 
 								[
 									{
-										m_ID = "86edbb6f-d53c-4592-8611-44cbf7815468"
-										m_fromNodeID = "ea82652e-8bfa-4805-a29b-bd19dac58b24"
-										m_outputPinID = "d730b0dc-e95c-409e-829d-96cb48ed9670"
-										m_toNodeID = "fd88499e-2a3f-484b-91f7-131f6a5c9aa6"
-										m_inputPinID = "d7de0406-ab82-445d-942c-45adec7d877f"
+										m_ID = "12e247c4-d070-4fcd-a71f-1139d76385a5"
+										m_fromNodeID = "69c2c4d8-7f2b-4839-831a-25a4ec8e9c3d"
+										m_outputPinID = "bff89fa1-bc4d-4624-be65-d21ff4d83ade"
+										m_toNodeID = "ee8953e4-41b8-4ec4-8af2-57d25ef1d479"
+										m_inputPinID = "9b5aac9b-45de-4e95-8f1a-11719930ca47"
 									},
 								]
 							}
@@ -584,19 +584,19 @@
 					m_graphType = "StateMachine"
 					m_viewOffset = [ 0.0, 0.0 ]
 					m_flViewZoom = 1.0
-					m_entryStateID = "98b9c855-c812-4fd7-a2aa-c7865bcef529"
+					m_entryStateID = "7f4e0e32-bde6-4017-b1a4-62c44572811b"
 				}
 			},
 			{
 				_class = "CNmGraphDocPoseResultNode"
-				m_ID = "915723ac-5957-41b1-ae52-63748d9b8e3e"
+				m_ID = "c2a3b684-62b5-4a55-bad8-567c428ec3ca"
 				m_name = "result"
 				m_floatingComment = ""
 				m_position = [ 760.0, 120.0 ]
 				m_inputPins = 
 				[
 					{
-						m_ID = "f7055bfc-504e-4097-ae1d-52af83572918"
+						m_ID = "ba2520b0-09e1-46bb-b920-7f3f4f50c27c"
 						m_name = "Out"
 						m_type = "Pose"
 						m_bIsDynamicPin = false
@@ -612,11 +612,11 @@
 		m_connections = 
 		[
 			{
-				m_ID = "0274ea2f-6e62-4230-a7f4-92431c6165af"
-				m_fromNodeID = "f6c1975a-0da7-47a7-9f7f-ee4080853b8d"
-				m_outputPinID = "18e10fd7-6851-4e41-ab86-879196611b6a"
-				m_toNodeID = "915723ac-5957-41b1-ae52-63748d9b8e3e"
-				m_inputPinID = "f7055bfc-504e-4097-ae1d-52af83572918"
+				m_ID = "88e53b47-4b1e-44a1-b376-45f676def204"
+				m_fromNodeID = "742c8ff3-dd2d-4229-a07c-af21d0dd131d"
+				m_outputPinID = "fccba21f-43cd-4f6b-9881-3981721f0fb5"
+				m_toNodeID = "c2a3b684-62b5-4a55-bad8-567c428ec3ca"
+				m_inputPinID = "ba2520b0-09e1-46bb-b920-7f3f4f50c27c"
 			},
 		]
 	}

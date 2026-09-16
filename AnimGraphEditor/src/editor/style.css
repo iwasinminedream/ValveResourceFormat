@@ -137,6 +137,16 @@ main {
     min-height: 0;
 }
 
+/*
+ * A grid item's default `min-height: auto` refuses to shrink below its content,
+ * so a tall palette grew the row, grew `main`, and pushed the footer off the
+ * bottom of the window. The panels scroll instead.
+ */
+main > * {
+    min-height: 0;
+    min-width: 0;
+}
+
 .panel {
     background: var(--panel);
     overflow-y: auto;
@@ -288,6 +298,15 @@ footer {
     border-bottom: none;
     border-top: 1px solid var(--line);
     font-size: 12px;
+    gap: 16px;
+}
+
+.status {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .status.error {
@@ -295,8 +314,19 @@ footer {
 }
 
 .hint {
-    margin-left: auto;
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: var(--muted);
+}
+
+/* The hint is the first thing to give up room on a narrow window. */
+@media (max-width: 1000px) {
+    .hint {
+        display: none;
+    }
 }
 
 @media (max-width: 1100px) {

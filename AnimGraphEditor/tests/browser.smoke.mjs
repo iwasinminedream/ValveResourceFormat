@@ -87,6 +87,20 @@ try {
 
     await page.goto(BASE, { waitUntil: 'networkidle' });
 
+    // The chrome has to fit the window: a tall palette must not push the
+    // status bar off the bottom, and nothing may scroll the page.
+    const chrome = await page.evaluate(() => ({
+        footerBottom: document.querySelector('footer').getBoundingClientRect().bottom,
+        viewportHeight: window.innerHeight,
+        pageScrolls: document.documentElement.scrollHeight > window.innerHeight,
+    }));
+
+    assert.ok(
+        chrome.footerBottom <= chrome.viewportHeight + 1,
+        `the footer is inside the window (bottom ${chrome.footerBottom} vs ${chrome.viewportHeight})`,
+    );
+    assert.equal(chrome.pageScrolls, false, 'the page itself does not scroll');
+
     // The palette renders the generated catalog.
     const paletteGroups = await page.locator('#palette details').count();
     assert.ok(paletteGroups > 5, `expected palette groups, saw ${paletteGroups}`);
