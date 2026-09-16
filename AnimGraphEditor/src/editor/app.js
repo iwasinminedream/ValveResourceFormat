@@ -204,9 +204,10 @@ export class EditorApp {
         }
 
         // Drop it in the middle of what the user is looking at.
+        const rect = this.elements.canvas.getBoundingClientRect();
         const centre = this.canvas.toGraphPoint(
-            this.elements.canvas.getBoundingClientRect().left + this.canvas.viewport.width / 2,
-            this.elements.canvas.getBoundingClientRect().top + this.canvas.viewport.height / 2,
+            rect.left + this.canvas.viewport.width / 2,
+            rect.top + this.canvas.viewport.height / 2,
         );
 
         const raw = instantiate(className, { x: Math.round(centre.x), y: Math.round(centre.y) });
@@ -305,7 +306,7 @@ export class EditorApp {
     }
 
     /** Re-walks the breadcrumb from the root, so the view survives an undo. */
-    navigateTo(depth) {
+    navigateTo(depth, { resetView = true } = {}) {
         this.breadcrumb.length = depth;
 
         let graph = this.document.rootGraph;
@@ -322,8 +323,15 @@ export class EditorApp {
             graph = next;
         }
 
-        this.canvas.setGraph(graph);
-        this.inspector.clear();
+        // Re-walking lands on a fresh wrapper around the same canvas; keeping
+        // the view means an undo does not throw away the user's pan and zoom.
+        const sameCanvas = this.canvas.graph?.id === graph.id;
+        this.canvas.setGraph(graph, { resetView: resetView && !sameCanvas });
+
+        if (!sameCanvas) {
+            this.inspector.clear();
+        }
+
         this.renderBreadcrumb();
     }
 
@@ -476,7 +484,7 @@ export class EditorApp {
 
     afterHistoryMove() {
         this.markDirty();
-        this.navigateTo(this.breadcrumb.length);
+        this.navigateTo(this.breadcrumb.length, { resetView: false });
         this.validate();
         this.refreshStatus();
     }

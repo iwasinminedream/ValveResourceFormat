@@ -151,6 +151,55 @@ try {
     );
     assert.match(await page.locator('#counts').innerText(), /2 nodes, 1 wires/);
 
+    // Clicking a wire selects it, at a zoom level where the screen-space hit
+    // tolerance and the graph-space one differ.
+    await page.evaluate(() => {
+        globalThis.editor.canvas.zoom = 1.8;
+        globalThis.editor.canvas.draw();
+    });
+
+    const wireMidpoint = await page.evaluate(() => {
+        const app = globalThis.editor;
+        const [connection] = app.graph.connections;
+        const from = app.graph.node(connection.m_fromNodeID);
+        const to = app.graph.node(connection.m_toNodeID);
+        const rect = app.canvas.canvas.getBoundingClientRect();
+
+        const toScreen = (x, y) => ({
+            x: rect.left + x * app.canvas.zoom + app.canvas.offset.x,
+            y: rect.top + y * app.canvas.zoom + app.canvas.offset.y,
+        });
+
+        const start = toScreen(from.position.x + 210, from.position.y + 40);
+        const end = toScreen(to.position.x, to.position.y + 40);
+        return { x: (start.x + end.x) / 2, y: (start.y + end.y) / 2 };
+    });
+
+    await page.mouse.click(wireMidpoint.x, wireMidpoint.y);
+    assert.notEqual(
+        await page.evaluate(() => globalThis.editor.canvas.selectedConnectionId),
+        null,
+        'clicking a wire selects it',
+    );
+
+    // An undo must not throw away the pan and zoom the user set up.
+    const viewBefore = await page.evaluate(() => ({
+        zoom: globalThis.editor.canvas.zoom,
+        offset: { ...globalThis.editor.canvas.offset },
+    }));
+
+    await page.keyboard.press('Control+z');
+    await page.keyboard.press('Control+Shift+z');
+
+    assert.deepEqual(
+        await page.evaluate(() => ({
+            zoom: globalThis.editor.canvas.zoom,
+            offset: { ...globalThis.editor.canvas.offset },
+        })),
+        viewBefore,
+        'undo and redo leave the view where it was',
+    );
+
     // Undo removes the wire; redo restores it.
     await page.keyboard.press('Control+z');
     assert.equal(await page.evaluate(() => globalThis.editor.graph.connections.length), 0);

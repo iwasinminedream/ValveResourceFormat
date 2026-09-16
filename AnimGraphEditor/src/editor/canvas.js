@@ -41,6 +41,7 @@ const CATEGORY_COLORS = {
 const PIN_RADIUS = 4.5;
 const PIN_HIT_RADIUS = 9;
 const DRAG_THRESHOLD = 4;
+const WIRE_HIT_WIDTH = 10;
 const MIN_ZOOM = 0.15;
 const MAX_ZOOM = 2.5;
 
@@ -204,9 +205,8 @@ export class GraphCanvas {
                 continue;
             }
 
-            this.context.lineWidth = 10 / this.zoom;
-            const hit = this.context.isPointInStroke(path, ...this.toScreen(point));
-            if (hit) {
+            this.context.lineWidth = WIRE_HIT_WIDTH;
+            if (this.context.isPointInStroke(path, ...this.toScreen(point))) {
                 return connection;
             }
         }
@@ -271,6 +271,10 @@ export class GraphCanvas {
         if (this.pendingWire) {
             this.drawPendingWire();
         }
+
+        this.connectedInputs = new Set(
+            this.graph.connections.map((connection) => connection.m_inputPinID),
+        );
 
         for (const node of this.graph.nodes) {
             this.drawNode(node);
@@ -400,9 +404,7 @@ export class GraphCanvas {
         context.font = `${Math.round(11 * scale)}px system-ui, sans-serif`;
         context.textBaseline = 'middle';
 
-        const connectedInputs = new Set(
-            this.graph.connections.map((connection) => connection.m_inputPinID),
-        );
+        const connectedInputs = this.connectedInputs ?? new Set();
 
         for (const pin of node.inputs) {
             const anchor = pinAnchor(node, pin);

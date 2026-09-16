@@ -212,7 +212,10 @@ export function layoutCommand(graph, positions) {
         label: 'Auto-layout',
         do: () => {
             for (const [nodeId, position] of positions) {
-                graph.node(nodeId)?.position && (graph.node(nodeId).position = position);
+                const node = graph.node(nodeId);
+                if (node) {
+                    node.position = position;
+                }
             }
         },
         undo: () => {
